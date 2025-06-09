@@ -1,0 +1,53 @@
+{
+  "name": "@monorepo/root",
+  "version": "0.0.1",
+  "description": "Interactive Data Grid Component",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandroppf/interactive-data-grid.git"
+  },
+  "keywords": [
+    "Next.js",
+    "React.js",
+    "Typescript",
+    "TailwindCSS",
+    "Vite"
+  ],
+  "author": "Leandro Pedroso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leandroppf/interactive-data-grid/issues"
+  },
+  "homepage": "https://github.com/leandroppf/interactive-data-grid#readme",
+  "workspaces": [
+    "packages/shared/*",
+    "apps/*"
+  ],
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.7",
+    "@radix-ui/react-checkbox": "^1.1.4",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-dropdown-menu": "^2.1.6",
+    "@radix-ui/react-popover": "^1.1.6",
+    "@radix-ui/react-tooltip": "^1.1.8",
+    "@tanstack/react-virtual": "^3.13.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "uuid": "^11.1.0",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

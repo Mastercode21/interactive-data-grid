@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --white: #ffffff;
+  --dark-blue: #0c0035;
+  --black: #171717;
+  --dark-fuschia: #e82286;
+  --light-blue: #69ceee;
+  --light-fuschia: #f994c7;
+  --light-purple: #6d2eb1;
+  --dark-purple: #6d2eb1;
+
+  --primary: var(--light-blue);
+  --secondary: var(--light-purple);
+  --text: var(--white);
+
+  --background: var(--light-purple);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-background: var(--background);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-color-text: var(--text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: var(--dark-fuschia);
+    --secondary: var(--dark-blue);
+
+    --background: var(--dark-blue);
+  }
+}
+
+* {
+  scrollbar-width: 4px;
+  scrollbar-color: var(--text) transparent;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@utility btn-icon {
+  @apply w-fit cursor-pointer rounded-2xl p-1 hover:bg-white/30;
+}
+
+@utility btn-primary {
+  @apply bg-primary text-color-text rounded-md px-4 cursor-pointer hover:opacity-90 active:opacity-85 text-base h-10 disabled:opacity-60;
+}
+
+@utility btn-secondary {
+  @apply text-color-text rounded-md px-4 cursor-pointer hover:bg-amber-50/10 active:bg-amber-50/15 border border-amber-50 h-10;
+}

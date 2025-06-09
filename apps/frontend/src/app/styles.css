@@ -1,0 +1,4 @@
+@import 'tailwindcss';
+@import '../../../../globals.css';
+
+@source '../../../../node_modules/@monorepo/data-grid/**/**.tsx';
